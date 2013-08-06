@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  image: MyString
+  ability_a: MyString
+  ability_b: MyString
+  flavor: MyString
+  edition_id: 1
+  set_id: 1
+  type_id: 1
+
+two:
+  name: MyString
+  image: MyString
+  ability_a: MyString
+  ability_b: MyString
+  flavor: MyString
+  edition_id: 1
+  set_id: 1
+  type_id: 1

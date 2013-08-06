@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  edition_id: 1
+  symbol: MyString
+  background: MyString
+
+two:
+  name: MyString
+  edition_id: 1
+  symbol: MyString
+  background: MyString

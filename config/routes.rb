@@ -1,4 +1,24 @@
 Gunsoficardus::Application.routes.draw do
+  get "basic_card/list"
+
+  get "basic_card/view"
+
+  get "basic_card/edit"
+
+  get "basic_card/new"
+
+  get "basic_card/delete"
+
+  get "crew_cards/list"
+
+  get "crew_cards/view"
+
+  get "crew_cards/edit"
+
+  get "crew_cards/new"
+
+  get "crew_cards/delete"
+
   get "deck/new"
 
   get "deck/edit"

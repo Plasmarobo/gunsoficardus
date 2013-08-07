@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  pilot: 1
+  engineer: 1
+  gunner: 1
+  basiccard_id: 1
+  image: MyString
+  icon_a: MyString
+  icon_b: MyString
+  icon_c: MyString
+
+two:
+  name: MyString
+  pilot: 1
+  engineer: 1
+  gunner: 1
+  basiccard_id: 1
+  image: MyString
+  icon_a: MyString
+  icon_b: MyString
+  icon_c: MyString

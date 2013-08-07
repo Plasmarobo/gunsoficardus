@@ -11,73 +11,46 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130806222503) do
+ActiveRecord::Schema.define(:version => 20130807005736) do
 
-  create_table "admins", :force => true do |t|
-    t.string   "username"
-    t.string   "hash"
+  create_table "abilities", :force => true do |t|
+    t.integer  "crewcard_id"
+    t.string   "textA"
+    t.string   "textB"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "basic_cards", :force => true do |t|
+    t.integer  "cardset_id"
+    t.integer  "rarity"
+    t.string   "background"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "icon_a"
+    t.string   "icon_b"
+    t.string   "icon_c"
+    t.string   "name"
   end
 
   create_table "card_sets", :force => true do |t|
     t.string   "name"
-    t.integer  "edition_id"
-    t.string   "symbol"
-    t.string   "background"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "cards", :force => true do |t|
-    t.string   "name"
-    t.integer  "type_id"
-    t.integer  "cardset_id"
-    t.integer  "edition_id"
-    t.string   "content"
-    t.integer  "p_type"
-    t.integer  "e_type"
-    t.integer  "g_type"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "crews", :force => true do |t|
-    t.string   "name"
+    t.string   "icon"
     t.string   "image"
-    t.string   "ability_a"
-    t.string   "ability_b"
-    t.string   "flavor"
-    t.integer  "edition_id"
-    t.integer  "set_id"
-    t.integer  "type_id"
+    t.date     "release"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "crew_cards", :force => true do |t|
+    t.string   "name"
     t.integer  "pilot"
     t.integer  "engineer"
     t.integer  "gunner"
-  end
-
-  create_table "decks", :force => true do |t|
-    t.string   "name"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "editions", :force => true do |t|
-    t.string   "name"
-    t.string   "card"
-    t.string   "symbol"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "types", :force => true do |t|
-    t.string   "name"
+    t.integer  "basiccard_id"
     t.string   "image"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "users", :force => true do |t|

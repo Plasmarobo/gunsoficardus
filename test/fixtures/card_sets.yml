@@ -2,12 +2,12 @@
 
 one:
   name: MyString
-  edition_id: 1
-  symbol: MyString
-  background: MyString
+  icon: MyString
+  image: MyString
+  release: 2013-08-06
 
 two:
   name: MyString
-  edition_id: 1
-  symbol: MyString
-  background: MyString
+  icon: MyString
+  image: MyString
+  release: 2013-08-06

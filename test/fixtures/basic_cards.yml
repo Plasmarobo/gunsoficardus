@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cardset_id: 1
+  rarity: 1
+  background: MyString
+
+two:
+  cardset_id: 1
+  rarity: 1
+  background: MyString

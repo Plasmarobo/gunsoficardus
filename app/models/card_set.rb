@@ -1,3 +1,3 @@
 class CardSet < ActiveRecord::Base
-  attr_accessible :background, :edition_id, :name, :symbol
+  attr_accessible :icon, :image, :name, :release
 end

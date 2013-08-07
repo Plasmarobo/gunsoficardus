@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  crewcard_id: 1
+  textA: MyString
+  textB: MyString
+
+two:
+  crewcard_id: 1
+  textA: MyString
+  textB: MyString

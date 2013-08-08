@@ -1,2 +1,5 @@
-<h1>BasicCard#list</h1>
-<p>Find me in app/views/basic_card/list.html.erb</p>
+<ul>
+<% cards.each do |card| %>
+	<li><%= link_to card.name, controller: "basic_card", action: "view", name: card.name %></li>
+<% end %>
+</ul>

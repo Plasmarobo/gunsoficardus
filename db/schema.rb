@@ -11,22 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130807005736) do
+ActiveRecord::Schema.define(:version => 20130808043004) do
 
   create_table "abilities", :force => true do |t|
-    t.integer  "crewcard_id"
+    t.integer  "crew_card_id"
     t.string   "textA"
     t.string   "textB"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "titleA"
+    t.string   "titleB"
   end
 
   create_table "basic_cards", :force => true do |t|
-    t.integer  "cardset_id"
+    t.integer  "card_set_id"
     t.integer  "rarity"
     t.string   "background"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.string   "icon_a"
     t.string   "icon_b"
     t.string   "icon_c"
@@ -47,10 +49,10 @@ ActiveRecord::Schema.define(:version => 20130807005736) do
     t.integer  "pilot"
     t.integer  "engineer"
     t.integer  "gunner"
-    t.integer  "basiccard_id"
+    t.integer  "basic_card_id"
     t.string   "image"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "users", :force => true do |t|

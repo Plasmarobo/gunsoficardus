@@ -1,4 +1,22 @@
 Gunsoficardus::Application.routes.draw do
+  get "ability/new"
+
+  get "ability/view"
+
+  get "ability/edit"
+
+  get "ability/list"
+
+  get "ability/delete"
+
+  get "images/new"
+
+  get "images/list"
+
+  get "images/delete"
+
+  get "images/edit"
+
   get "basic_card/list"
 
   get "basic_card/view"
@@ -102,7 +120,7 @@ Gunsoficardus::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'games#home'
 
   # See how all your routes lay out with "rake routes"
 

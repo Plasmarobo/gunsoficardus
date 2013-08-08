@@ -11,7 +11,7 @@ class Ability < ActiveRecord::Base
   end
 
   def get_content_block()
-  	return "<div class='ability_title'>#{titleA}:</div><div class='ability_block'>#{CMLtoHTML(textA)}</div><br />
+  	return "<div class='ability_title'>#{titleA}:</div><div class='ability_block'>#{CMLtoHTML(textA)}</div><br /><br />
   			<div class='ability_title'>#{titleB}:</div><div class='ability_block'>#{CMLtoHTML(textB)}</div>"
   end
 end

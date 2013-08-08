@@ -1,2 +1,4 @@
 <h1>BasicCard#new</h1>
-<%= render "form"%>
+<%= form_tag(controller: "basic_card", view: "new") do %>
+<%= render :form %>
+<% end %>

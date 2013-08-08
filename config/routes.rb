@@ -1,4 +1,8 @@
 Gunsoficardus::Application.routes.draw do
+  get "card_set/list"
+
+  get "card_set/delete"
+
   get "ability/new"
 
   get "ability/view"

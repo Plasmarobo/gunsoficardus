@@ -1,6 +1,7 @@
 class CrewCard < ActiveRecord::Base
-  attr_accessible :basic_card_id, :engineer, :gunner, :image, :name, :pilot, :ability
+  attr_accessible :basic_card_id, :engineer, :gunner, :image, :name, :pilot, :ability, :flavor
   belongs_to :basic_card
+  has_one :card_set, through: :basic_card
   has_one :ability
 
 
@@ -33,8 +34,20 @@ class CrewCard < ActiveRecord::Base
     return self.basic_card.icon_c
   end
 
+  def get_primary_icon()
+    if(self.pilot > self.gunner and self.pilot > self.engineer)
+      return self.icon_a
+    else 
+      if(self.gunner > self.pilot and self.gunner > self.engineer)
+        return self.icon_b
+      else
+        return self.icon_c
+      end
+    end
+  end
+
   def get_card_content()
-  	return self.ability.get_content_block()
+  	return self.ability.get_content_block() + "<br /><br />#{self.flavor}"
   end
 
   def get_card_name()

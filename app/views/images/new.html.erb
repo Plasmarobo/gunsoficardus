@@ -1,2 +1,11 @@
-<h1>Images#new</h1>
-<p>Find me in app/views/images/new.html.erb</p>
+<% if (defined? error) %> 
+	<%= "<div class=\"error\">#{error}</div>".html_safe %>
+<% end %>
+<div class="form">
+<%= form_tag({controller: :images, action: :new}, multipart: true, method: "POST", enctype:"multipart/form-data") do %>
+  <%= label_tag 'Upload an Image' %>
+  <%= select_tag(:type, options_for_select([['Icon', 'icons'], ['Card Background', 'cards'], ['Portrait', 'portraits'], ['Set Logo', 'sets'], ['Other', 'misc']], 'portraits')) %>
+  <%= file_field_tag :image %>
+  <%= submit_tag "Upload" %>
+<% end %>
+</div>

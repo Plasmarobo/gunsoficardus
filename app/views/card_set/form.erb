@@ -1,0 +1,11 @@
+<div class="form_container">
+<%= label_tag "Set Logo:"%><br />
+<%= render template: "images/list", locals: {images: Image.where("itype = 'sets'"), select_mode: true, target: "image", type:"sets", selected_index:card_set.image, list_id: 0} %>
+<%= label_tag "Set Icon:"%><br />
+<%= render template: "images/list", locals: {images: Image.where("itype = 'icons'"), select_mode: true, target: "icon", type:"icons", selected_index:card_set.icon, list_id: 1} %>
+<%= label_tag "Set name:"%><%= text_field_tag :name, card_set.name%><br />
+<%= label_tag "Set description:"%><%= text_area_tag :desc, card_set.desc, options:{ size: "80x20"}%><br />
+<%= label_tag "Date released:"%><%= select_date(card_set.release, order: [:year, :month, :day])%><br />
+<%= hidden_field_tag :image, card_set.image %>
+<%= hidden_field_tag :icon, card_set.icon %>
+</div>

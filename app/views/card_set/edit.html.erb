@@ -1,2 +1,5 @@
-<h1>CardSet#edit</h1>
-<p>Find me in app/views/card_set/edit.html.erb</p>
+<%= form_tag "edit" do %>
+<%= hidden_field_tag "id", card_set.id %>
+<%= render template: "card_set/form", locals: {card_set: card_set} %>
+<%= submit_tag "Commit" %>
+<% end %>

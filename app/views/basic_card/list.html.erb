@@ -1,5 +1,28 @@
-<ul>
-<% cards.each do |card| %>
-	<li><%= link_to card.name, controller: "basic_card", action: "view", name: card.name %></li>
-<% end %>
-</ul>
+<% 
+if ((defined?(selected_index)).nil?) 
+	(selected_index = 0) 
+end 
+if ((defined?(select_mode)).nil?) 
+	(select_mode = false) 
+end 
+if ((defined?(list_id)).nil?) 
+	(list_id = 0) 
+end 
+%> 
+<div class="basic_card_list" lid="<%= list_id%>">
+	<% cards.each do |card| %>
+		<% if !select_mode %>
+			<div class="basic_card_element_link" basiccardid="<%= card.id%>">
+		<% else %>
+			<div class="basic_card_element_selector
+			<% if(selected_index == card.id)%>
+			<%= " selected"%>
+			<% else %>
+			<%= "" %>
+			<% end%>
+			" target="<%= target%>" basiccardset="<%= card.id%>">
+		<% end %>
+				<img src="/images/icons/<%=card.card_set.icon%>"></img><%= card.name %>
+			</div>
+	<% end %>
+</div>

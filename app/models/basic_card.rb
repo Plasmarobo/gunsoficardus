@@ -1,5 +1,5 @@
 class BasicCard < ActiveRecord::Base
-  attr_accessible :background, :card_set_id, :rarity, :name, :icon_a, :icon_b, :icon_c
+  attr_accessible :background, :card_set_id, :rarity, :name, :icon_a, :icon_b, :icon_c, :id
   belongs_to :card_set
   has_many :crew_cards
   
@@ -33,51 +33,31 @@ class BasicCard < ActiveRecord::Base
     return self.icon_c
   end
 
+  def get_primary_icon()
+    return self.icon_a
+  end
+
   def get_card_content()
-    if(@adv_card_ref != nil)
-      return @adv_card_ref.get_card_content()
-    else
-      return "<div class='errortext'>Content Error</div>"
-    end
+    return "<div class='errortext'>Content Error</div>"
   end
 
   def get_card_name()
-    if(@adv_card_ref != nil)
-      return @adv_card_ref.get_card_name()
-    else
-      return "<div class='errortext'>Name Error</div>"
-    end
+    return "<div class='errortext'>Name Error</div>"
   end
 
   def get_card_image()
-    if(@adv_card_ref != nil)
-      return @adv_card_ref.get_card_image()
-    else
-      return 'error.png'
-    end
+    return 'error.png'
   end
 
   def get_a_content()
-    if(@adv_card_ref != nil)
-      return @adv_card_ref.get_a_content()
-    else
-      return "<div class='errortext'>0</div>"
-    end
+    return "<div class='errortext'>0</div>"
   end
 
   def get_b_content()
-    if(@adv_card_ref != nil)
-      return @adv_card_ref.get_b_content()
-    else
-      return "<div class='errortext'>0</div>"
-    end
+    return "<div class='errortext'>0</div>"
   end
 
   def get_c_content()
-    if(@adv_card_ref != nil)
-      return @adv_card_ref.get_c_content()
-    else
-      return "<div class='errortext'>0</div>"
-    end
+    return "<div class='errortext'>0</div>"
   end
 end

@@ -68,3 +68,30 @@ body{
 	margin-right: auto;
 	background-color:#393930;
 }
+
+.selected
+{
+	background-color:#3333AA;
+	border: solid 2px #4444FF;
+}
+
+.error
+{
+	color:#FF0000;
+}
+
+.form_container
+{
+	background-color:#444444;
+	min-height:20em;
+	min-width:20em;
+	height:auto;
+	width:auto;
+}
+
+.indent
+{
+	display:inline-block;
+	width:3em;
+	min-height:1em;
+}

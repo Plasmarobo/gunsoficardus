@@ -1,2 +1,7 @@
-<h1>CardSet#new</h1>
-<p>Find me in app/views/card_set/new.html.erb</p>
+<% if (defined? error) %> 
+	<%= "<div class=\"error\">#{error}</div>".html_safe %>
+<% end %>
+<%= form_tag "new", method:"POST", multipart:true, enctype:"multipart/form-data" do %>
+<%= render template: "card_set/form", locals: {card_set:card_set} %>
+<%= submit_tag "Create" %>
+<% end %>

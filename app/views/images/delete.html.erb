@@ -1,2 +1,6 @@
-<h1>Images#delete</h1>
-<p>Find me in app/views/images/delete.html.erb</p>
+<h1>Really Delete?</h1><br />
+<%= form_tag :delete, id: id do %>
+<%= hidden_field_tag :confirm, "yes" %>
+<%= label_tag "Are you sure? This cannot be undone." %><br />
+<%= submit_tag "Delete"%>
+<% end %>

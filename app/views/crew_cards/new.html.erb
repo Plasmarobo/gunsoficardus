@@ -1,2 +1,7 @@
-<h1>CrewCards#new</h1>
-<p>Find me in app/views/crew_cards/new.html.erb</p>
+<% if (defined? error) %> 
+	<%= "<div class=\"error\">#{error}</div>".html_safe %>
+<% end %>
+<%= form_tag "new", method:"POST" do %>
+<%= render template: "crew_cards/form", locals: {card: card} %>
+<%= submit_tag "Create" %>
+<% end %>

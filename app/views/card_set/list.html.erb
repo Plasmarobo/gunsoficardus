@@ -1,2 +1,28 @@
-<h1>CardSet#list</h1>
-<p>Find me in app/views/card_set/list.html.erb</p>
+<% 
+if ((defined?(selected_index)).nil?) 
+	(selected_index = 0) 
+end
+if ((defined?(select_mode)).nil?) 
+	(select_mode = false) 
+end 
+if ((defined?(list_id)).nil?) 
+	(list_id = 0) 
+end 
+%> 
+<div class="card_set_list" lid="<%= list_id%>">
+	<% card_sets.each do |card_set| %>
+		<% if !select_mode %>
+			<div class="card_set_element_link" cardsetid="<%= card_set.id%>">
+		<% else %>
+			<div class="card_set_element_selector
+			<% if(selected_index == card_set.id)%>
+			<%= " selected"%>
+			<% else %>
+			<%= "" %>
+			<% end%>
+			" target="<%= target%>" cardsetid="<%= card_set.id%>" lid="<%= list_id %>">
+		<% end %>
+				<img src="<%= image_path(card_set.icon)%>"></img><%= card_set.name %>
+			</div>
+	<% end %>
+</div>

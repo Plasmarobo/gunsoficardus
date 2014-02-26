@@ -1,0 +1,42 @@
+<% 
+if ((defined?(selected_index)).nil?) 
+	(selected_index = 0) 
+end  
+if ((defined?(select_mode)).nil?)
+	(select_mode = false)
+end
+if ((defined?(selected_set)).nil?) 
+	(selected_set = 0) 
+end 
+%> 
+<div class="basic_card_set_list">
+<% card_sets.each do |card_set| %>
+<div class="basic_card_title"><img src="<%= image_path(card_set.icon)%>"></img><%= card_set.name %></div>
+<div csid="cardset_<%= card_set.id%>" class="basic_card_separator_cell" style="display:
+	<% if(selected_set == card_set.id)%>
+	<%= "block"%>
+	<% else %>
+	<%= "hidden"%>
+	<% end %>
+	">
+<div cardsetid="<%= card_set.id%>" class="basic_card_list_set">
+	<% card_set.basic_cards.each do |card| %>
+		
+		<% if !select_mode %>
+			<div class="basic_card_element_link" basiccardid="<%= card.id%>">
+		<% else %>
+			<div class="basic_card_element_selector
+			<% if(selected_index == card.id)%>
+			<%= " selected"%>
+			<% else %>
+			<%= "" %>
+			<% end%>
+			" target="<%= target%>" basiccardid="<%= card.id%>">
+		<% end %>
+			<div class="indent"></div><%= card.name %>
+			</div>
+	<% end %>
+</div>
+</div>
+<% end %>
+</div>

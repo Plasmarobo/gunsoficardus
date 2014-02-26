@@ -1,2 +1,9 @@
-<h1>CardSet#view</h1>
-<p>Find me in app/views/card_set/view.html.erb</p>
+<div class="card_set_viewport">
+	<img src="/images/sets/<%= card_set.image%>"></img><br />
+	Name: <%= card_set.name %><img src="/images/icons/<%= card_set.icon %>"></img><br />
+	<div style="width:40em;height:auto">
+		<i><%= card_set.desc %></i>
+	</div><br />
+	Released on: <%= time_tag card_set.release %>
+	
+</div>

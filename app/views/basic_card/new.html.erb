@@ -1,4 +1,9 @@
-<h1>BasicCard#new</h1>
-<%= form_tag(controller: "basic_card", view: "new") do %>
-<%= render :form %>
+<% if (defined? error) %> 
+	<%= "<div class=\"error\">#{error}</div>".html_safe %>
 <% end %>
+<div class="form_backer">
+<%= form_tag "new", method:"POST" do %>
+<%= render template: "basic_card/form", locals: {card: card, index_a:card.icon_a, index_b:card.icon_b, index_c:card.icon_c, index_bkg: card.background}%>
+<%= submit_tag "Create" %>
+<% end %>
+</div>

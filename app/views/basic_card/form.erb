@@ -1,0 +1,20 @@
+<div class="form_container">
+<%= label_tag "Select First Icon"%><br />
+<%= render template: "images/list", locals: {list_id:"1", images: Image.where("itype = 'icons'"), select_mode: true, target: "icon_a", type:"sets", selected_index:index_a} %><br /> 
+<%= label_tag "Select Second Icon"%><br /> 
+<%= render template: "images/list", locals: {list_id:"2",images: Image.where("itype = 'icons'"), select_mode: true, target: "icon_b", type:"sets", selected_index:index_b} %><br /> 
+<%= label_tag "Select Third Icon"%><br />
+<%= render template: "images/list", locals: {list_id:"3",images: Image.where("itype = 'icons'"), select_mode: true, target: "icon_c", type:"sets", selected_index:index_c} %><br /> 
+<%= label_tag "Select Card Background"%><br />
+<%= render template: "images/list", locals: {list_id:"4",images: Image.where("itype = 'cards'"), select_mode: true, target: "background", type:"sets", selected_index:index_bkg} %><br />
+<%= label_tag "Card template name:"%><%= text_field_tag :name, card.name%><br />
+<%= render template: "card_set/list", locals: {list_id:"5",card_sets: CardSet.find(:all), select_mode: true, target: "cardset", list_id:"1", selected_index:card.card_set_id} %><br />
+<%= label_tag "Card rarity:"%><%= text_field_tag :rarity, card.rarity%><br />
+<%= hidden_field_tag :id, card.id %>
+<%= hidden_field_tag :icon_a%>
+<%= hidden_field_tag :icon_b%>
+<%= hidden_field_tag :icon_c%>
+<%= hidden_field_tag :background%>
+<%= hidden_field_tag :cardset%>
+</div>
+

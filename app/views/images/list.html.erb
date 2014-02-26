@@ -1,2 +1,25 @@
-<h1>Images#list</h1>
-<p>Find me in app/views/images/list.html.erb</p>
+<% 
+if ((defined?(selected_index)).nil?) 
+	(selected_index = 0) 
+end 
+%> 
+<div class="image_list" lid="<%= list_id%>">
+	<%= link_to "New", "images/new" %>
+	<div class="image_buffer">
+	<% images.each do |i| %>
+		<% if (select_mode) %>
+			<div class="image_cell image_selector
+			<% if(selected_index == i.id or selected_index == i.name) %>
+			<%= " selected"%>
+			<% else %>
+			<%= ""%>
+			<% end %>
+			" lid="<%= list_id%>" target="<%= target%>" iid="<%= i.id %>">
+		<% else %>
+			<div class="image_cell">
+		<% end %>
+			<img vertical-align="top" style="vertical-align:text-top;" src="/images/<%= i.itype %>/<%= i.name %>"></img>
+		</div>
+	<%end%>
+	</div>
+</div>

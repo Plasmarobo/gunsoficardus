@@ -1,7 +1,10 @@
 Gunsoficardus::Application.routes.draw do
+
   get "card_set/list"
 
   get "card_set/delete"
+
+  post "card_set/delete"
 
   get "ability/new"
 
@@ -9,37 +12,61 @@ Gunsoficardus::Application.routes.draw do
 
   get "ability/edit"
 
+  post "ability/edit"
+
   get "ability/list"
 
   get "ability/delete"
 
+  post "ability/delete"
+
   get "images/new"
+
+  post "images/new"
 
   get "images/list"
 
   get "images/delete"
 
+  post "images/delete"
+
   get "images/edit"
 
   get "basic_card/list"
+
+  get "basic_card/list_by_set"
 
   get "basic_card/view"
 
   get "basic_card/edit"
 
+  post "basic_card/edit"
+
   get "basic_card/new"
+
+  post "basic_card/new"
 
   get "basic_card/delete"
 
+  post "basic_card/delete"
+
   get "crew_cards/list"
+
+  get "crew_cards/list_by_set"
 
   get "crew_cards/view"
 
   get "crew_cards/edit"
 
+  post "crew_cards/edit"
+
   get "crew_cards/new"
 
+  post "crew_cards/new"
+
   get "crew_cards/delete"
+
+  post "crew_cards/delete"
 
   get "deck/new"
 
@@ -49,31 +76,31 @@ Gunsoficardus::Application.routes.draw do
 
   get "deck/delete"
 
+  post "deck/delete"
+
   get "user/new"
+
+  post "user/new"
 
   get "user/view"
 
   get "user/edit"
 
+  post "user/edit"
+
   get "user/delete"
+
+  post "user/delete"
 
   get "card_set/new"
 
+  post "card_set/new"
+
   get "card_set/edit"
 
+  post "card_set/edit"
+
   get "card_set/view"
-
-  get "edition/new"
-
-  get "edition/edit"
-
-  get "edition/view"
-
-  get "card/new"
-
-  get "card/edit"
-
-  get "card/view"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

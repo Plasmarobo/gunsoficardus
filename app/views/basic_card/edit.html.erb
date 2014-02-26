@@ -1,2 +1,10 @@
-<h1>BasicCard#edit</h1>
-<p>Find me in app/views/basic_card/edit.html.erb</p>
+<% if (defined? error) %> 
+	<%= "<div class=\"error\">#{error}</div>".html_safe %>
+<% end %>
+<div class="form_backer">
+<%= form_tag "edit", method:"POST" do %>
+<%= hidden_field_tag "id", card.id %>
+<%= render template: "basic_card/form", locals:{card: card, index_a:(card.icon_a), index_b:(card.icon_b), index_c:(card.icon_c), index_bkg:(card.background), index_set:card.card_set_id} %>
+<%= submit_tag "Commit" %>
+<% end %>
+</div>

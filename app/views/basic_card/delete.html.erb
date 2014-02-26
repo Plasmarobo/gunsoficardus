@@ -1,2 +1,7 @@
-<h1>BasicCard#delete</h1>
-<p>Find me in app/views/basic_card/delete.html.erb</p>
+<h1>Really Delete <%= name %>?</h1><br />
+<%= form_tag "delete" do %>
+<%= hidden_field_tag "id", id %>
+<%= hidden_field_tag "confirm", "yes" %>
+<%= label_tag "Are you sure? This cannot be undone." %><br />
+<%= submit_tag "Delete"%>
+<% end %>

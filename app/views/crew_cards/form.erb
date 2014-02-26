@@ -1,0 +1,32 @@
+<div class="form_container">
+<%= label_tag "New Crew Member" %><br />
+<%= label_tag "Select a card template:" %><br />
+<%= render template: "basic_card/list_by_set", locals: {list_id:"2",card_sets: CardSet.find(:all), select_mode: true, target: "basiccard", selected_index: card.basic_card_id} %><br />
+<br />
+<%= label_tag "Select an image" %><br />
+<%= render template: "images/list", locals: {list_id:"3",images: Image.where("itype = 'portraits'"), select_mode: true, target: "image", type:"portraits"} %><br />
+
+<%= label_tag "Pilot Level:"%>
+<%= number_field_tag "pilot", card.pilot %><br />
+<%= label_tag "Engineer:" %>
+<%= number_field_tag "engineer", card.engineer %><br />
+<%= label_tag "Gunner:" %>
+<%= number_field_tag "gunner", card.gunner %><br />
+
+<%= label_tag "Name:" %>
+<%= text_field_tag "name", card.name %><br />
+<%= label_tag "Abilities (Use Card Markup Script):" %><br />
+<%= label_tag "First Ability"%><br />
+<%= label_tag "Title:"%><%= text_field_tag "titleA", card.ability.titleA %><br />
+<%= label_tag "Ability Text:" %>
+<%= text_area_tag "textA", card.ability.textA%><br/>
+<%= label_tag "Second Ability"%><br />
+<%= label_tag "Title:"%><%= text_field_tag "titleB", card.ability.titleB%><br />
+<%= label_tag "Ability Text:" %>
+<%= text_area_tag "textB", card.ability.textB%><br/>
+<%= label_tag "Flavor Text:" %>
+<%= text_area_tag "flavor", card.flavor%><br />
+
+<%= hidden_field_tag "image" %>
+<%= hidden_field_tag "basiccard" %>
+</div>

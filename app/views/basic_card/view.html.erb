@@ -1,4 +1,4 @@
-<div class="card" style="background-image:url('<%= image_path(card.get_card_background()) %>')">
+<div class="card" style="background-image:url('<%= "/images/cards/#{card.get_card_background()}" %>')">
 	<div class="card_left_margin">
 	</div>
 	<div class="card_center_content">
@@ -8,19 +8,19 @@
 			</div>
 		</div>
 		<div class="icon">
-			<img src="<%= image_path(card.get_card_icon_a()) %>"></img>
+			<img src="<%= "/images/icons/#{card.get_card_icon_a()}" %>"></img>
 			<div class="icon_content"><%= card.get_a_content().html_safe %></div>
 		</div>
 		<div class="icon">
-			<img src="<%= image_path(card.get_card_icon_b()) %>"></img>
+			<img src="<%= "/images/icons/#{card.get_card_icon_b()}" %>"></img>
 			<div class="icon_content"><%= card.get_b_content().html_safe %></div>
 		</div>
 		<div class="icon">
-			<img src="<%= image_path(card.get_card_icon_c()) %>"></img>
+			<img src="<%= "/images/icons/#{card.get_card_icon_c()}" %>"></img>
 			<div class="icon_content"><%= card.get_c_content().html_safe %></div>
 		</div>
 		<div class="card_image">
-			<img src="<%= image_path(card.get_card_image())%>"></img>
+			<img src="<%= "/images/portraits/#{card.get_card_image()}"%>"></img>
 		</div>
 		<div class="card_content">
 			<%= card.get_card_content().html_safe %>
@@ -28,6 +28,6 @@
 	</div>
 	<div class="card_right_margin">
 		<div class="card_right_margin_spacer"></div>
-		<div class="icon"><img src="<%= image_path(card.get_card_set_icon()) %>"></img></div>
+		<div class="icon"><img src="<%= "/images/icons/#{card.get_card_set_icon()}" %>"></img></div>
 	</div>
 </div>
